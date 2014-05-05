@@ -1,0 +1,15 @@
+{% capture content %}
+  <div id="content">
+    {% for project in pages %}
+      <div class="project">
+        <h3>{{ project.title }}</h3>
+        <img src="{{ project.assets.first.url }}" alt="{{ project.title }}">
+        
+        <p>{{ project.meta['summary'] }}</p>
+        
+      </div>
+    {% endfor %}
+  </div>
+{% endcapture %}
+
+{% include 'includes/layout' %}

@@ -1,5 +1,5 @@
 <div id="nav-projects">
-  <h2>Projects</h2>
+  <h2><a href="/projects">Projects</a></h2>
   <ul>
     {% for page in site.pages %}
       {% if page.slug == 'projects' %}
@@ -12,7 +12,7 @@
 </div>
 
 <div id="nav-services">
-  <h2>Services</h2>
+  <h2><a href="/services">Services</a></h2>
   <ul>
     {% for page in site.pages %}
       {% if page.slug == 'services' %}
@@ -28,6 +28,6 @@
   <h2>Contact</h2>
   <p>{{ site.meta['phone']}}</p>
   <p><a href="mailto:{{ site.meta['email'] }}">{{ site.meta['email'] }}</a></p>
-  <p><a href="https://www.github.com/SeriouslyAwesome">Github</a></p>
-  <p><a href="http://www.twitter.com/iamjohnellis">Twitter</a></p>
+  <p><a href="https://www.github.com/SeriouslyAwesome" target="_blank">Github</a></p>
+  <p><a href="http://www.twitter.com/iamjohnellis" target="_blank">Twitter</a></p>
 </div>

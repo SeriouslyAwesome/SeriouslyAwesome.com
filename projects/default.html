@@ -8,17 +8,19 @@
     <div id="content-body">
       {{ body }}
       
-      <nav id="pagination">
-        <ul>
-          {% if previous %}
-            <li id="pagination-prev"><a href="{{ previous.url }}">&laquo; Previous</a></li>
-          {% endif %}
+      {% if parent %}
+        <nav id="pagination">
+          <ul>
+            {% if previous %}
+              <li id="pagination-prev"><a href="{{ previous.url }}">&laquo; Previous</a></li>
+            {% endif %}
           
-          {% if next %}
-            <li id="pagination-next"><a href="{{ next.url }}">Next &raquo;</a></li>
-          {% endif %}
-        </ul>
-      </nav>
+            {% if next %}
+              <li id="pagination-next"><a href="{{ next.url }}">Next &raquo;</a></li>
+            {% endif %}
+          </ul>
+        </nav>
+      {% endif %}
     </div>
   </div>
 {% endcapture %}

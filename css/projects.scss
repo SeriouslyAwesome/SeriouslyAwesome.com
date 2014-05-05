@@ -1,0 +1,23 @@
+body#projects {
+	.project {
+		margin-bottom: 3em;
+		
+		h3 { 
+			border-bottom: 2px solid #ddd;
+			min-height: 3em;
+			display: block;
+			position: relative;
+			vertical-align: middle;
+		}
+		
+		img {
+			max-width: 105%;
+			margin: 0 -2.5%;
+		}
+		
+		@include media($tablet) {
+			@include span-columns(6);
+			@include omega(2n);
+		}
+	}
+}
