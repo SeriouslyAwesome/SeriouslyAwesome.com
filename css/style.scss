@@ -9,28 +9,59 @@
 #content {
 	@include outer-container;
 	padding-bottom: 6em;
+	padding: 1.5em;
 	
 	p { font-weight: 300; }
-	p:nth-child(2) {
-		font-size: 2em;
-		line-height: 1.25em;
-		font-weight: 400;
-		color: #000;
-		margin-bottom: 0.75em;
+	
+	@include media($tablet) {
+		padding: 0;
 	}
 	
 	#content-meta {
-		@include span-columns(3);
-		@include shift(1);
-		
-		text-align: right;
 		list-style: none;
 		padding: 0;
-		margin-top: 4em;
+		position: relative;
+		z-index: 10;
+		margin-bottom: 1.5em;
+				
+		h3 { 
+			border-bottom: 2px solid #ddd;
+			margin-bottom: 1.33em;
+		}
+		
+		@include media($tablet) {
+			text-align: right;
+			@include span-columns(4);
+		}
 	}
 	#content-body {
-		@include span-columns(8);
+		position: relative;
+		z-index: 9;
 		
-		h3 { border-bottom: 2px solid $brand; }
+		a { 
+			color: $brand;
+			&:hover, &:focus { color: $gray; }
+		}
+		
+		p:nth-child(2) {
+			font-size: 1.5em;
+			line-height: 1.25em;
+			font-weight: 400;
+			color: #000;
+			
+			@include media($tablet) {
+				font-size: 2em;
+				line-height: 1.25em;
+				margin-bottom: 0.75em;
+			}
+		}
+		
+		@include media($tablet) {
+			@include span-columns(8);
+			img {
+				max-width: 772px;
+				margin: 0 -28px;
+			}
+		}
 	}
 }

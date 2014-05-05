@@ -1,12 +1,24 @@
 {% capture content %}
   <div id="content">
     <ul id="content-meta">
-      <li>The Democratic Travelers</li>
-      <li>Visit Site</li>
+      <li><h3>{{ title }}</h3></li>
+      <li>Completed {{ meta['project_completion'] }}</li>
+      <li><a href="{{ meta['project_url'] }}" target="_blank">{{ meta['project_url'] }}</a></li>
     </ul>
     <div id="content-body">
-      <h3>{{ title }}</h3>
       {{ body }}
+      
+      <nav id="pagination">
+        <ul>
+          {% if previous %}
+            <li id="pagination-prev"><a href="{{ previous.url }}">&laquo; Previous</a></li>
+          {% endif %}
+          
+          {% if next %}
+            <li id="pagination-next"><a href="{{ next.url }}">Next &raquo;</a></li>
+          {% endif %}
+        </ul>
+      </nav>
     </div>
   </div>
 {% endcapture %}
