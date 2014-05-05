@@ -1,0 +1,1 @@
+MTIConfig={},MTIConfig.EnableCustomFOUTHandler=!0;

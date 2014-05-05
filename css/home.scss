@@ -1,0 +1,16 @@
+body#home {
+	background: $brand;
+	
+	h2 { border-bottom-color: black; }
+	p, ul { color: white; }
+	
+	#primary-nav {
+		a {
+			color: rgba(255,255,255,0.65);
+			
+			&:hover, &:focus {
+				color: white;
+			}
+		}
+	}
+}

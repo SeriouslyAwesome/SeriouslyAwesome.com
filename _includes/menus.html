@@ -1,0 +1,33 @@
+<div id="nav-projects">
+  <h2>Projects</h2>
+  <ul>
+    {% for page in site.pages %}
+      {% if page.slug == 'projects' %}
+        {% for project in page.pages %}
+          <li><a href="{{ project.url }}" {% if project.url == url %}class="active"{% endif %}>{{ project.title }}</a></li>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="nav-services">
+  <h2>Services</h2>
+  <ul>
+    {% for page in site.pages %}
+      {% if page.slug == 'services' %}
+        {% for service in page.pages %}
+          <li><a href="{{ service.url }}" {% if service.url == url %}class="active"{% endif %}>{{ service.title }}</a></li>
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="nav-contact">
+  <h2>Contact</h2>
+  <p>{{ site.meta['phone']}}</p>
+  <p><a href="mailto:{{ site.meta['email'] }}">{{ site.meta['email'] }}</a></p>
+  <p><a href="https://www.github.com/SeriouslyAwesome">Github</a></p>
+  <p><a href="http://www.twitter.com/iamjohnellis">Twitter</a></p>
+</div>

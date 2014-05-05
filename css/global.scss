@@ -1,0 +1,119 @@
+$brand: #ef4c2d;
+$tablet: 769px;
+$font-family-2: 'DIN1451W15-Mittelschrif', Arial, Helvetica, 'Helvetica Neue', sans-serif;
+
+html, body { 
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	-webkit-font-smoothing: antialiased;
+}
+
+body {
+	font-size: 16px;
+	line-height: 1.5em;
+	margin: 0;
+	top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-family-2;
+	font-size: 1em;
+	font-weight: normal;
+	text-transform: uppercase;
+	letter-spacing: 0.2em;
+}
+
+ul, p {
+	padding: 0;
+	margin: 0;
+	
+	font-family:'rooney-sans', Arial, Helvetica, 'Helvetica Neue', sans-serif;
+}
+
+p { margin-bottom: 1.5em; }
+
+a {
+	color: rgba(0,0,0,0.5);
+	text-decoration: none;
+	&:hover,
+	&:focus,
+	&.active { 
+		color: $brand;
+	}
+}
+
+img { max-width: 100%; }
+
+.center {
+	position: relative;
+	
+	@include media($tablet) {
+		top: 50%;
+		@include transform(translateY(-50%));
+	}
+	
+}
+
+h1#brand {
+	text-align: center;
+	display: block;
+	margin: 0;
+	margin-bottom: 2%;
+	img { max-width: 100%; }
+
+}
+
+#primary-nav {
+	position: relative;	
+	padding: 1.5em;
+	
+	h2 {
+		border-bottom: 2px solid $brand;
+	}
+	
+	@include media($tablet) {
+		@include outer-container;
+		padding: 0;
+	}
+
+	#nav-about,
+	#nav-projects,
+	#nav-services,
+	#nav-contact {
+		margin-bottom: 3em;
+	}
+	
+	#nav-about,
+	#nav-brand,
+	#nav-projects {
+		@include media($tablet) {
+			@include span-columns(3);
+		}
+	}
+	
+	#nav-about,
+	#nav-brand {
+		@include media($tablet) {
+			@include shift(1);
+		}
+	}
+	
+	#nav-brand { 
+		h1 { margin-top: 1.5em; }
+	}
+	
+	#nav-services {
+		@include media($tablet) {
+			@include span-columns(2);
+		}
+	}
+	
+	#nav-contact {
+		@include media($tablet) {
+			@include span-columns(3);
+		}
+		
+		p { margin: 0; }
+	}
+}
